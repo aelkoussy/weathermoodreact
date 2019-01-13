@@ -3,9 +3,13 @@ Simple weather gauge app made with React
 ## Steps to try this app
 
 1- Please download the repo
+
 2- cd into the local folder
+
 3- npm install
+
 4- npm start
+
 5- The app shall run on your browser on http://localhost:3000/
 
 ## Available Scripts
