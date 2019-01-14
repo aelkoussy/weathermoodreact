@@ -8,7 +8,7 @@ configure({ adapter: new Adapter() });
 
 describe("<SimpleTabs/>", () => {
   it("should render SimpleTabs component with One tabs element", () => {
-    const wrapper = shallow(<SimpleTabs getWeather={() => {}} />);
+    const wrapper = shallow(<SimpleTabs getWeather={() => {}} weather={{}} />);
     expect(wrapper.find(Tabs)).toHaveLength(1);
   });
 });

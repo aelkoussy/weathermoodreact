@@ -1,14 +1,14 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import * as actions from "../store/actions";
 import { CalcWeatherMood } from "../helperMethods/CalcWeatherMood";
 
 export class CityWeather extends Component {
   render() {
     let weatherMood = null;
-    if (this.props.weather[this.props.city]) {
+
+    // this is the weather object passed from the component caller
+    if (this.props.cityWeatherForecast) {
       // calculate weather mood
-      const weatherMoodIndex = CalcWeatherMood(this.props.weather[this.props.city]);
+      const weatherMoodIndex = CalcWeatherMood(this.props.cityWeatherForecast);
       weatherMood = (
         <div>
           <p>
@@ -32,21 +32,4 @@ export class CityWeather extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    weather: state.weather
-  };
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-    getWeather: cityID => {
-      dispatch(actions.getWeatherAsync(cityID));
-    }
-  };
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(CityWeather);
+export default CityWeather;
