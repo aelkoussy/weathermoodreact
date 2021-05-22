@@ -12,7 +12,7 @@ export const getWeatherAsync = cityID => {
   return dispatch => {
     axios
       .get(
-        `http://api.openweathermap.org/data/2.5/forecast?APPID=${APPID}&id=${cityID}&units=metric`
+        `https://api.openweathermap.org/data/2.5/forecast?APPID=${APPID}&id=${cityID}&units=metric`
       )
       //   passing the city name & the response weather array to the action
       .then(response => {
